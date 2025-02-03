@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Images</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create a Page</h1>
+        <form id="createPageForm">
+            <label for="pageName">Page Name:</label>
+            <input type="text" id="pageName" name="name" required>
+            <button type="submit">Create Page</button>
+        </form>
+
+        <h2>Upload Images</h2>
+        <form id="uploadImagesForm" enctype="multipart/form-data">
+            <label for="pageId">Select Page:</label>
+            <select id="pageId" name="page_id" required></select>
+
+            <label for="images">Select Images:</label>
+            <input type="file" id="images" name="images" multiple required>
+
+            <button type="submit">Upload Images</button>
+        </form>
+
+        <h2>Images in Page</h2>
+        <div id="imagesContainer"></div>
+        <div id="page-container">
+            <h1 id="page-name">Loading...</h1>
+            <div id="images-container">
+                <!-- Images will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

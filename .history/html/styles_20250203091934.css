@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+#imagesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#imagesContainer img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 8px;
+}
+
+
+#page-container {
+    text-align: center;
+    padding: 20px;
+}
+
+#page-name {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#images-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    justify-items: center;
+}
+
+.image-item {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-item:hover {
+    transform: scale(1.05);
+}
+
+/* Style the container holding all the pages and images */
+#imagesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds space between each page's section */
+    padding: 20px;
+}
+
+/* Style each page section */
+.page-section {
+    padding: 15px;
+    border: 2px solid #ccc; /* Border around each page section */
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the page name (title) */
+.page-section h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Style the images inside each page section */
+.page-section img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd; /* Border around each image */
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Add hover effect for images */
+.page-section img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
