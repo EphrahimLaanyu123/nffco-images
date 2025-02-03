@@ -19,7 +19,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # Max file size 16MB
 db.init_app(app)
 migrate = Migrate(app, db)
 api = Api(app)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": ["http://127.0.0.1:5500", "http://localhost:5173"]}})
 
 class PageResource(Resource):
     def post(self):
@@ -39,6 +39,7 @@ class PageResource(Resource):
         for page in pages:
             pages_data.append({
                 "id": page.id,
+                
                 "name": page.name
             })
 
@@ -78,32 +79,11 @@ class PageImagesResource(Resource):
             })
 
         return {"page_name": page.name, "images": images_data}, 200
-    
-class AllImagesResource(Resource):
-    def get(self):
-        images = Image.query.all()  # Get all images from the database
-        images_data = []
-
-        for image in images:
-            # Fetch the page related to the image
-            page = Page.query.get(image.page_id)
-
-            images_data.append({
-                "id": image.id,
-                "filename": image.filename,
-                "page_id": image.page_id,
-                "page_name": page.name if page else None,  # Include page name if exists
-            })
-
-        return {"images": images_data}, 200
-
 
 # Register API resources
 api.add_resource(PageResource, '/pages')
 api.add_resource(ImageResource, '/pages/images')
 api.add_resource(PageImagesResource, '/pages/<int:page_id>/images')
-api.add_resource(AllImagesResource, '/images')
-
 
 if __name__ == '__main__':
     app.run(debug=True)

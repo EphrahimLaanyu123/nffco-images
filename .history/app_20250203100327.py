@@ -19,7 +19,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # Max file size 16MB
 db.init_app(app)
 migrate = Migrate(app, db)
 api = Api(app)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": ["http://127.0.0.1:5500", "http://localhost:5173"]}})
 
 class PageResource(Resource):
     def post(self):
