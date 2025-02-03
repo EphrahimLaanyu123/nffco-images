@@ -118,7 +118,6 @@ api.add_resource(PageResource, '/pages')
 api.add_resource(ImageResource, '/pages/images')
 api.add_resource(PageImagesResource, '/pages/<int:page_id>/images')
 api.add_resource(AllImagesResource, '/images')
-api.add_resource(DeleteImageResource, '/images/<int:image_id>')
 
 
 if __name__ == '__main__':

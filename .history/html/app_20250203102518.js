@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const imagesContainer = document.getElementById('images-container');
 
     // Fetch the page and images from the Flask API
-    fetch(`https://nffco-images.onrender.com/pages/${pageId}/images`)
+    fetch(`http://127.0.0.1:5000/pages/${pageId}/images`)
         .then(response => response.json())
         .then(data => {
             const { page_name, images } = data;
